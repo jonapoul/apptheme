@@ -8,6 +8,7 @@ import androidx.preference.PreferenceManager
 import com.jonapoul.extensions.PrefPair
 import com.jonapoul.extensions.getStringFromPair
 
+@Suppress("unused")
 enum class AppTheme(val string: String, val int: Int) {
     SYSTEM("system", AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM),
     LIGHT("light", AppCompatDelegate.MODE_NIGHT_NO),

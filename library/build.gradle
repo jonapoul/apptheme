@@ -47,7 +47,7 @@ project.afterEvaluate {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin"
     implementation "androidx.preference:preference-ktx:$versions.preference"
     implementation "com.github.jonapoul:android-extensions:$versions.android_extensions"
     implementation "com.google.android.material:material:$versions.material"

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="overridden_atp_entries">
-        <item>System theme, you indecisive rapscallion</item>
-        <item>Light theme, you beacon of positivity and eye strain</item>
-        <item>Dark theme, you edgy brooding teenager</item>
-    </string-array>
-</resources>
