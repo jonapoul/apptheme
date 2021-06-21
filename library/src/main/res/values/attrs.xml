@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AppThemePreference">
+
+        <!-- Determines the displayed title of the preference. Default value = "App Theme" -->
+        <attr name="atp_title" format="string" />
+
+        <!-- Determines whether the dynamic theme icon is shown to the left of the preference. Only
+        matters if iconSpaceReserved is set to true (or ignored). Default value = true -->
+        <attr name="atp_shouldShowIcon" format="boolean" />
+
+    </declare-styleable>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- All default values -->
+    <com.jonapoul.theme.AppThemePreference />
+
+    <!-- Custom Title -->
+    <com.jonapoul.theme.AppThemePreference
+        app:atp_title="Pick your theme here with a custom title!" />
+
+    <com.jonapoul.theme.AppThemePreference
+        app:atp_shouldShowIcon="false"
+        app:atp_title="This time with no icon and reserved space" />
+
+    <com.jonapoul.theme.AppThemePreference
+        app:atp_title="This time with no icon and no reserved space"
+        app:iconSpaceReserved="false" />
+
+</PreferenceScreen>
