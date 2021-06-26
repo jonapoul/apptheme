@@ -5,8 +5,14 @@ import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.util.AttributeSet
 import androidx.preference.ListPreference
+import androidx.preference.Preference
 import androidx.preference.PreferenceManager
 
+/**
+ * A [Preference] which allows the user to toggle the app's display theme between light, dark, or
+ * "follow system". The persistence of this setting is managed internally, so a lot of the typical
+ * [Preference] configuration (usually done via the XML file) doesn't need to be done.
+ */
 class AppThemePreference @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -25,15 +31,12 @@ class AppThemePreference @JvmOverloads constructor(
 
     init {
         val a = context.obtainStyledAttributes(attrs, R.styleable.AppThemePreference)
-
         title = a.getText(R.styleable.AppThemePreference_atp_title)
             ?: context.getString(R.string.app_theme)
-
         shouldShowIcon = a.getBoolean(
             R.styleable.AppThemePreference_atp_shouldShowIcon,
             true
         )
-
         a.recycle()
 
         /* Force the default preference key as that bundled in this library */
@@ -55,26 +58,37 @@ class AppThemePreference @JvmOverloads constructor(
         setThemeIcon()
     }
 
+    /**
+     * Called when the [Preference] attaches to the parent view.
+     */
     override fun onAttached() {
         super.onAttached()
         prefs.registerOnSharedPreferenceChangeListener(this)
     }
 
+    /**
+     * Called when the [Preference] detaches from the parent view.
+     */
     override fun onDetached() {
         super.onDetached()
         prefs.unregisterOnSharedPreferenceChangeListener(this)
     }
 
+    /**
+     * When the theme preference is changed, apply the change and restart the activity.
+     */
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         if (key == AppTheme.key) {
             AppTheme.setFromPrefs(prefs)
         }
     }
 
+    /**
+     * Update the displayed icon between the sun and moon, depending on the app's current state.
+     */
     private fun setThemeIcon() {
         /* Don't change the icon if the user's specified that they don't want any icon space */
         if (!isIconSpaceReserved || !shouldShowIcon) return
-
         val isDarkTheme = context.resources.configuration.uiMode and
             Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
         setIcon(

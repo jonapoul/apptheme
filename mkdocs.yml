@@ -1,0 +1,45 @@
+# pip install mkdocs mkdocs-material
+# mkdocs serve
+# mkdocs gh-deploy
+
+site_name: AppTheme
+repo_name: AppTheme
+site_url: https://jonapoul.github.io/apptheme
+repo_url: https://github.com/jonapoul/apptheme
+site_description: "An Android library to handle configuration of app theme"
+site_author: Jon Poulton
+remote_branch: gh-pages
+
+copyright: 'Copyright &copy; 2021 Jon Poulton'
+docs_dir: 'docs'
+
+theme:
+  name: 'material'
+  icon:
+    repo: fontawesome/brands/git-alt
+  static_templates:
+    - 404.html
+  palette:
+    - scheme: slate
+      primary: red
+      accent: yellow
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.expand
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jonapoul
+
+plugins:
+  - git-revision-date
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+nav:
+  - 'Home': index.md
+  - 'API Reference': api/index.html

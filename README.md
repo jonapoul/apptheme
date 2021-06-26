@@ -1,10 +1,14 @@
 # AppTheme
 
-![Build](https://github.com/jonapoul/apptheme/actions/workflows/build.yml/badge.svg)
+![Build](https://github.com/jonapoul/apptheme/actions/workflows/actions.yml/badge.svg)
 [![Jitpack](https://jitpack.io/v/jonapoul/apptheme.svg)](https://jitpack.io/#jonapoul/apptheme)
+![SDK](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)
 
 ## Summary
 A simple library to hold logic for changing Android app theme between light, dark and system default. Includes a `Preference` class to allow changing inside your app, and an `AppTheme` class to allow manual updates and persistence.
+
+## API Reference
+See [https://jonapoul.github.io/apptheme](https://jonapoul.github.io/apptheme).
  
 ## Gradle Import
 Root-level `build.gradle`:
@@ -19,7 +23,7 @@ allprojects {
 Module-level `build.gradle`:
 ```gradle
 dependencies {
-    implementation "com.github.jonapoul:apptheme:1.0.0"
+    implementation "com.github.jonapoul:apptheme:1.0.1"
 }
 ```
 
@@ -27,7 +31,7 @@ dependencies {
 
 | Light | Dark
 |:--:|:--:|
-![Dialog](docs/light.png) | ![Fragment](docs/dark.png) |
+![Dialog](img/light.png) | ![Fragment](img/dark.png) |
 
 ## Usage
 
@@ -58,9 +62,11 @@ The class (at the moment) offers two customisation options:
 ### Programmatically
 
 You can also update theme in code by calling the following method:
+
 ```kotlin
 AppTheme.set(context, AppTheme.LIGHT)
 ```
+
 The second argument can be one of `AppTheme.LIGHT`, `AppTheme.DARK` or `AppTheme.SYSTEM`. 
 
 That's all she wrote.

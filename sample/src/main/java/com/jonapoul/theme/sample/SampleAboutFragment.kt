@@ -6,13 +6,11 @@ import com.jonapoul.about.AboutSection
 
 class SampleAboutFragment : AboutFragment(
     sections = listOf(
-        AboutSection(
-            title = R.string.about_build,
-            items = listOf(
-                AboutItem.fromVersion(BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE),
-                AboutItem.fromBuildType(BuildConfig.BUILD_TYPE),
-                AboutItem.fromBuildTimeMs(BuildConfig.BUILD_TIME_MS),
-            )
+        AboutSection.fromBuildInfo(
+            versionName = BuildConfig.VERSION_NAME,
+            versionCode = BuildConfig.VERSION_CODE,
+            buildType = BuildConfig.BUILD_TYPE,
+            buildTimeMs = BuildConfig.BUILD_TIME_MS
         ),
         AboutSection(
             title = R.string.about_support,

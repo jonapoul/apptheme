@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.*
 import androidx.navigation.fragment.findNavController
 import androidx.preference.PreferenceFragmentCompat
+import com.jonapoul.extensions.navigation.safelyNavigate
 import com.jonapoul.theme.AppTheme
-import com.jonapoul.extensions.safelyNavigate
 
 class SettingsFragment : PreferenceFragmentCompat() {
 
