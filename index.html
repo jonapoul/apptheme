@@ -226,6 +226,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    API Reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#gradle-import" class="md-nav__link">
     Gradle Import
   </a>
@@ -329,6 +336,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    API Reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#gradle-import" class="md-nav__link">
     Gradle Import
   </a>
@@ -399,6 +413,8 @@
 <img alt="SDK" src="https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat" /></p>
 <h2 id="summary">Summary</h2>
 <p>A simple library to hold logic for changing Android app theme between light, dark and system default. Includes a <code>Preference</code> class to allow changing inside your app, and an <code>AppTheme</code> class to allow manual updates and persistence.</p>
+<h2 id="api-reference">API Reference</h2>
+<p>See <a href="https://jonapoul.github.io/apptheme">https://jonapoul.github.io/apptheme</a>.</p>
 <h2 id="gradle-import">Gradle Import</h2>
 <p>Root-level <code>build.gradle</code>:
 <div class="highlight"><pre><span></span><code>allprojects {
@@ -409,7 +425,7 @@
 </code></pre></div></p>
 <p>Module-level <code>build.gradle</code>:
 <div class="highlight"><pre><span></span><code>dependencies {
-    implementation &quot;com.github.jonapoul:apptheme:1.0.0&quot;
+    implementation &quot;com.github.jonapoul:apptheme:1.0.1&quot;
 }
 </code></pre></div></p>
 <h2 id="screenshots">Screenshots</h2>
@@ -470,10 +486,10 @@ That's it! This appears as the top-most entry on the above screenshots, containi
 </tbody>
 </table>
 <h3 id="programmatically">Programmatically</h3>
-<p>You can also update theme in code by calling the following method:
+<p>You can also update theme in code by calling the following method:</p>
 <div class="highlight"><pre><span></span><code><span class="n">AppTheme</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">AppTheme</span><span class="p">.</span><span class="na">LIGHT</span><span class="p">)</span>
 </code></pre></div>
-The second argument can be one of <code>AppTheme.LIGHT</code>, <code>AppTheme.DARK</code> or <code>AppTheme.SYSTEM</code>. </p>
+<p>The second argument can be one of <code>AppTheme.LIGHT</code>, <code>AppTheme.DARK</code> or <code>AppTheme.SYSTEM</code>. </p>
 <p>That's all she wrote.</p>
                 
                   
