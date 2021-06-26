@@ -5,8 +5,8 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
-import com.jonapoul.extensions.PrefPair
-import com.jonapoul.extensions.getStringFromPair
+import com.jonapoul.extensions.sharedprefs.PrefPair
+import com.jonapoul.extensions.sharedprefs.getStringFromPair
 
 @Suppress("unused")
 enum class AppTheme(val string: String, val int: Int) {
