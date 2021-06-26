@@ -1,8 +1,9 @@
 /.idea
 /build
 /captures
+/.gradle
+/img/api
 local.properties
-.gradle
 .DS_Store
 .externalNativeBuild
 .cxx

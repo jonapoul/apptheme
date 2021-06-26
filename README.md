@@ -27,7 +27,7 @@ dependencies {
 
 | Light | Dark
 |:--:|:--:|
-![Dialog](docs/light.png) | ![Fragment](docs/dark.png) |
+![Dialog](img/light.png) | ![Fragment](img/dark.png) |
 
 ## Usage
 
