@@ -23,7 +23,7 @@ allprojects {
 Module-level `build.gradle`:
 ```gradle
 dependencies {
-    implementation "com.github.jonapoul:apptheme:1.0.0"
+    implementation "com.github.jonapoul:apptheme:1.0.1"
 }
 ```
 
