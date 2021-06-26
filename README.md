@@ -6,6 +6,9 @@
 
 ## Summary
 A simple library to hold logic for changing Android app theme between light, dark and system default. Includes a `Preference` class to allow changing inside your app, and an `AppTheme` class to allow manual updates and persistence.
+
+## API Reference
+See [https://jonapoul.github.io/apptheme](https://jonapoul.github.io/apptheme).
  
 ## Gradle Import
 Root-level `build.gradle`:
@@ -59,9 +62,11 @@ The class (at the moment) offers two customisation options:
 ### Programmatically
 
 You can also update theme in code by calling the following method:
+
 ```kotlin
 AppTheme.set(context, AppTheme.LIGHT)
 ```
+
 The second argument can be one of `AppTheme.LIGHT`, `AppTheme.DARK` or `AppTheme.SYSTEM`. 
 
 That's all she wrote.

@@ -4,8 +4,8 @@ import android.content.Context
 import android.util.TypedValue
 
 /**
- * Copied each of these methods from from androidx.core.content.res.TypedArrayUtils, since for some
- * godforsaken reason us plebs are blocked from accessing them.
+ * Copied this method from from [androidx.core.content.res.TypedArrayUtils], since for some
+ * godforsaken reason us plebs are blocked from accessing them from regular apps.
  */
 internal fun getAttr(context: Context, attr: Int, fallbackAttr: Int): Int {
     val value = TypedValue()
