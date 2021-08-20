@@ -45,6 +45,7 @@ class AppThemePreference @JvmOverloads constructor(
         /* Force our internal entries and entry values to be used */
         setEntryValues(R.array.app_theme_values)
         setEntries(R.array.app_theme_entries)
+        dialogTitle = title
 
         /* Set the default value as "follow system". TODO: Change this? */
         setDefaultValue("system")

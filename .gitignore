@@ -2,7 +2,7 @@
 /build
 /captures
 /.gradle
-/img/api
+/docs/api
 local.properties
 .DS_Store
 .externalNativeBuild
