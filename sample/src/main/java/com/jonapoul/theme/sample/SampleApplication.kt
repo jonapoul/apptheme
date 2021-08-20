@@ -1,12 +1,11 @@
 package com.jonapoul.theme.sample
 
-import android.app.Application
+import androidx.multidex.MultiDexApplication
 import com.jonapoul.theme.AppTheme
 
-class SampleApplication : Application() {
+class SampleApplication : MultiDexApplication() {
     override fun onCreate() {
         super.onCreate()
-
         AppTheme.init(this)
     }
 }
