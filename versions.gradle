@@ -2,8 +2,8 @@ ext.versions = [
         // Build variables
         minSdk                  : 14,
         targetSdk               : 30,
-        libVersionCode          : 4,
-        libVersionName          : '1.0.3',
+        libVersionCode          : 5,
+        libVersionName          : '1.0.4',
 
         // Plugins, etc
         gradle                  : '4.2.1',
