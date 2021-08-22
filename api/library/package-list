@@ -1,6 +1,10 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:com.jonapoul.theme////PointingToDeclaration/library/com.jonapoul.theme/index.html
+$dokka.location:com.jonapoul.theme/AppTheme.Companion///PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-companion/index.html
+$dokka.location:com.jonapoul.theme/AppTheme.Companion/init/#android.content.Context/PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-companion/init.html
+$dokka.location:com.jonapoul.theme/AppTheme.Companion/set/#android.content.Context#com.jonapoul.theme.AppTheme/PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-companion/set.html
+$dokka.location:com.jonapoul.theme/AppTheme.Companion/setFromPrefs/#android.content.SharedPreferences/PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-companion/set-from-prefs.html
 $dokka.location:com.jonapoul.theme/AppTheme.DARK///PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-d-a-r-k/index.html
 $dokka.location:com.jonapoul.theme/AppTheme.DARK/int/#/PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-d-a-r-k/int.html
 $dokka.location:com.jonapoul.theme/AppTheme.DARK/name/#/PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-d-a-r-k/name.html
