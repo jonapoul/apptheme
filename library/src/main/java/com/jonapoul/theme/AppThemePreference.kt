@@ -40,7 +40,7 @@ class AppThemePreference @JvmOverloads constructor(
         a.recycle()
 
         /* Force the default preference key as that bundled in this library */
-        key = AppTheme.key
+        key = AppTheme.PREF.key
 
         /* Force our internal entries and entry values to be used */
         setEntryValues(R.array.app_theme_values)
@@ -79,7 +79,7 @@ class AppThemePreference @JvmOverloads constructor(
      * When the theme preference is changed, apply the change and restart the activity.
      */
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
-        if (key == AppTheme.key) {
+        if (key == AppTheme.PREF.key) {
             AppTheme.setFromPrefs(prefs)
         }
     }

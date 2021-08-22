@@ -1,7 +1,6 @@
 name: Build
 
 on:
-  pull_request:
   push:
     branches:
 
@@ -38,12 +37,6 @@ jobs:
         with:
           python-version: 3.8
 
-      - name: Copy README to docs
-        run:  |
-          mkdir -p docs
-          cp -r img docs/img
-          cp README.md docs/index.md
-
       - name: Build mkdocs
         run: |
           pip3 install mkdocs
@@ -54,7 +47,6 @@ jobs:
 
       - name: Deploy docs
         if: success()
-#        if: success() && github.ref == 'refs/heads/master'
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           BRANCH: gh-pages # The branch the action should deploy to.

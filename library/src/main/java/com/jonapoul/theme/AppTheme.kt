@@ -17,17 +17,15 @@ enum class AppTheme(val string: String, val int: Int) {
     LIGHT("light", AppCompatDelegate.MODE_NIGHT_NO),
     DARK("dark", AppCompatDelegate.MODE_NIGHT_YES);
 
-    /** @suppress */
     companion object {
-        private val PREF = PrefPair("app_theme", "system")
-        internal val key: String = PREF.key
+        internal val PREF = PrefPair("app_theme", "system")
 
         /**
          * Persists and applies the given [AppTheme] to the app.
          */
         fun set(context: Context, theme: AppTheme) {
             val prefs = PreferenceManager.getDefaultSharedPreferences(context)
-            prefs.edit { putString(key, theme.string) }
+            prefs.edit { putString(PREF.key, theme.string) }
             AppCompatDelegate.setDefaultNightMode(theme.int)
         }
 
