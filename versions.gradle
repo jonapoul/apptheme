@@ -1,28 +1,28 @@
 ext.versions = [
         // Build variables
-        minSdk                  : 14,
-        targetSdk               : 30,
-        libVersionCode          : 6,
-        libVersionName          : '1.0.5',
+        minSdk                  : 15,
+        targetSdk               : 31,
+        libVersionCode          : 7,
+        libVersionName          : '1.0.6',
 
         // Plugins, etc
         gradle                  : '4.2.1',
         dexcount                : '2.1.0-RC01',
         dokka                   : '1.4.32',
-        kotlin                  : '1.5.21',
+        kotlin                  : '1.5.31',
         buildTools              : '30.0.3',
         ktlint                  : '10.1.0',
         leakcanary              : '2.7',
         spotless                : '5.14.0',
 
         // Library dependencies
-        android_extensions      : '1.3.5',
+        android_extensions      : '1.3.11',
         material                : '1.4.0',
 
         // Sample app dependencies
         about                   : '1.1.1',
         appcompat               : '1.3.1',
-        constraintlayout        : '2.1.0',
+        constraintlayout        : '2.1.1',
         core_ktx                : '1.3.2',
         multidex                : '2.0.1',
         navigation              : '2.3.5',
