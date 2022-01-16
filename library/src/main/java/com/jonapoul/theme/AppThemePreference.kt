@@ -6,7 +6,6 @@ import android.content.res.Configuration
 import android.util.AttributeSet
 import androidx.preference.ListPreference
 import androidx.preference.Preference
-import androidx.preference.PreferenceManager
 
 /**
  * A [Preference] which allows the user to toggle the app's display theme between light, dark, or
@@ -25,7 +24,7 @@ class AppThemePreference @JvmOverloads constructor(
 ) : ListPreference(context, attrs, defStyleAttr, defStyleRes),
     SharedPreferences.OnSharedPreferenceChangeListener {
 
-    private val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+    private val prefs = AppTheme.getPrefs(context)
 
     private val shouldShowIcon: Boolean
 

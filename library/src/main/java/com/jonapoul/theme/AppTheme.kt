@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.edit
-import androidx.preference.PreferenceManager
 import com.jonapoul.extensions.sharedprefs.PrefPair
 import com.jonapoul.extensions.sharedprefs.getStringFromPair
 
@@ -18,14 +17,16 @@ enum class AppTheme(val string: String, val int: Int) {
     DARK("dark", AppCompatDelegate.MODE_NIGHT_YES);
 
     companion object {
-        internal val PREF = PrefPair("app_theme", "system")
+        fun getPrefs(context: Context): SharedPreferences = context.getSharedPreferences(
+            Constants.SHARED_PREFS_NAME,
+            Context.MODE_PRIVATE
+        )
 
         /**
          * Persists and applies the given [AppTheme] to the app.
          */
         fun set(context: Context, theme: AppTheme) {
-            val prefs = PreferenceManager.getDefaultSharedPreferences(context)
-            prefs.edit { putString(PREF.key, theme.string) }
+            getPrefs(context).edit { putString(Constants.PREF_KEY, theme.string) }
             AppCompatDelegate.setDefaultNightMode(theme.int)
         }
 
@@ -45,9 +46,7 @@ enum class AppTheme(val string: String, val int: Int) {
          * state based on whatever was persisted before, defaulting to "follow system".
          */
         fun init(context: Context) {
-            setFromPrefs(
-                PreferenceManager.getDefaultSharedPreferences(context)
-            )
+            setFromPrefs(getPrefs(context))
         }
 
         private fun fromString(str: String): Int = values().firstOrNull { it.string == str }?.int
