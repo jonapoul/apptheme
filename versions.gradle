@@ -7,7 +7,7 @@ ext.versions = [
 
         // Plugins, etc
         gradle                  : '4.2.1',
-        dexcount                : '2.1.0-RC01',
+        detekt                  : '1.19.0',
         dokka                   : '1.4.32',
         kotlin                  : '1.5.31',
         buildTools              : '30.0.3',
