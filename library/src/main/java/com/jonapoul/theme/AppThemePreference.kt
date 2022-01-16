@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.util.AttributeSet
+import androidx.core.content.withStyledAttributes
 import androidx.preference.ListPreference
 import androidx.preference.Preference
 
@@ -26,28 +27,28 @@ class AppThemePreference @JvmOverloads constructor(
 
     private val prefs = AppTheme.getPrefs(context)
 
-    private val shouldShowIcon: Boolean
+    private var shouldShowIcon: Boolean = DEFAULT_SHOULD_SHOW_ICON
 
     init {
-        val a = context.obtainStyledAttributes(attrs, R.styleable.AppThemePreference)
-        title = a.getText(R.styleable.AppThemePreference_atp_title)
-            ?: context.getString(R.string.app_theme)
-        shouldShowIcon = a.getBoolean(
-            R.styleable.AppThemePreference_atp_shouldShowIcon,
-            true
-        )
-        a.recycle()
+        context.withStyledAttributes(attrs, R.styleable.AppThemePreference) {
+            title = getText(R.styleable.AppThemePreference_atp_title)
+                ?: context.getString(R.string.app_theme)
+            shouldShowIcon = getBoolean(
+                R.styleable.AppThemePreference_atp_shouldShowIcon,
+                DEFAULT_SHOULD_SHOW_ICON
+            )
+        }
 
         /* Force the default preference key as that bundled in this library */
-        key = AppTheme.PREF.key
+        key = Constants.PREF_KEY
 
         /* Force our internal entries and entry values to be used */
         setEntryValues(R.array.app_theme_values)
         setEntries(R.array.app_theme_entries)
         dialogTitle = title
 
-        /* Set the default value as "follow system". TODO: Change this? */
-        setDefaultValue("system")
+        /* Set the default value as "follow system" */
+        setDefaultValue(AppTheme.SYSTEM.string)
 
         /* Force the simple summary provider, meaning that the current theme name will be listed
          * under the preference */
@@ -78,7 +79,7 @@ class AppThemePreference @JvmOverloads constructor(
      * When the theme preference is changed, apply the change and restart the activity.
      */
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
-        if (key == AppTheme.PREF.key) {
+        if (key == Constants.PREF_KEY) {
             AppTheme.setFromPrefs(prefs)
         }
     }
@@ -98,5 +99,9 @@ class AppThemePreference @JvmOverloads constructor(
                 R.drawable.ic_theme_light
             }
         )
+    }
+
+    private companion object {
+        const val DEFAULT_SHOULD_SHOW_ICON = true
     }
 }

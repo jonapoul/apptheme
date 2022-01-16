@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.edit
-import com.jonapoul.extensions.sharedprefs.PrefPair
 import com.jonapoul.extensions.sharedprefs.getStringFromPair
 
 /**
@@ -31,12 +30,12 @@ enum class AppTheme(val string: String, val int: Int) {
         }
 
         /**
-         *
+         * Attempts to get the saved app theme from the app's [SharedPreferences], then applies it.
          */
         fun setFromPrefs(prefs: SharedPreferences) {
             AppCompatDelegate.setDefaultNightMode(
                 fromString(
-                    prefs.getStringFromPair(PREF)
+                    prefs.getStringFromPair(Constants.PREF_PAIR)
                 )
             )
         }
@@ -49,7 +48,14 @@ enum class AppTheme(val string: String, val int: Int) {
             setFromPrefs(getPrefs(context))
         }
 
-        private fun fromString(str: String): Int = values().firstOrNull { it.string == str }?.int
+        /**
+         * Returns the [AppCompatDelegate] constant integer corresponding to the given [str] value.
+         * [str] should take one of the values "system", "light" or "dark" (case-sensitive) - or
+         * else an [IllegalStateException] is thrown.
+         */
+        private fun fromString(str: String): Int = values()
+            .firstOrNull { it.string == str }
+            ?.int
             ?: error("Unknown theme '$str'")
     }
 }
