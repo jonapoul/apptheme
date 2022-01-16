@@ -2,6 +2,7 @@ $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:com.jonapoul.theme////PointingToDeclaration/library/com.jonapoul.theme/index.html
 $dokka.location:com.jonapoul.theme/AppTheme.Companion///PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-companion/index.html
+$dokka.location:com.jonapoul.theme/AppTheme.Companion/getPrefs/#android.content.Context/PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-companion/get-prefs.html
 $dokka.location:com.jonapoul.theme/AppTheme.Companion/init/#android.content.Context/PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-companion/init.html
 $dokka.location:com.jonapoul.theme/AppTheme.Companion/set/#android.content.Context#com.jonapoul.theme.AppTheme/PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-companion/set.html
 $dokka.location:com.jonapoul.theme/AppTheme.Companion/setFromPrefs/#android.content.SharedPreferences/PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-companion/set-from-prefs.html
