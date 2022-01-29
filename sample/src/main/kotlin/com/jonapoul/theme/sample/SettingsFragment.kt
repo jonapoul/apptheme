@@ -1,10 +1,13 @@
 package com.jonapoul.theme.sample
 
 import android.os.Bundle
-import android.view.*
-import androidx.navigation.fragment.findNavController
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
 import androidx.preference.PreferenceFragmentCompat
-import com.jonapoul.extensions.navigation.safelyNavigate
 import com.jonapoul.theme.AppTheme
 
 class SettingsFragment : PreferenceFragmentCompat() {
@@ -12,7 +15,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         setHasOptionsMenu(true)
         return super.onCreateView(inflater, container, savedInstanceState)
@@ -27,18 +30,10 @@ class SettingsFragment : PreferenceFragmentCompat() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val nav = findNavController()
         when (item.itemId) {
             R.id.action_light -> AppTheme.set(requireContext(), AppTheme.LIGHT)
             R.id.action_dark -> AppTheme.set(requireContext(), AppTheme.DARK)
-            R.id.action_about -> nav.safelyNavigate(SettingsFragmentDirections.toAbout())
         }
-        refreshAllPreferences()
         return super.onOptionsItemSelected(item)
-    }
-
-    private fun refreshAllPreferences() {
-        preferenceScreen = null
-        addPreferencesFromResource(R.xml.settings)
     }
 }

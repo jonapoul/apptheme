@@ -14,9 +14,4 @@
         android:title="@string/light"
         app:showAsAction="ifRoom" />
 
-    <item
-        android:id="@+id/action_about"
-        android:title="@string/about"
-        app:showAsAction="never" />
-
 </menu>

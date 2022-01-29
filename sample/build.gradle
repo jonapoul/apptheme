@@ -45,7 +45,6 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
     implementation "androidx.navigation:navigation-ui-ktx:$versions.navigation"
     implementation "androidx.preference:preference-ktx:$versions.preference"
-    implementation "com.github.jonapoul:about:$versions.about"
     implementation "com.github.jonapoul:android-extensions:$versions.android_extensions"
     implementation "com.google.android.material:material:$versions.material"
 }

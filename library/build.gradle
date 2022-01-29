@@ -38,7 +38,7 @@ android {
 
 task installLocalGitHook(type: Copy) {
     from new File(rootProject.rootDir, 'scripts/pre-commit.sh')
-    into { new File(rootProject.rootDir, '.git/hooks') }
+    into new File(rootProject.rootDir, '.git/hooks')
     rename 'pre-commit.sh', 'pre-commit'
     fileMode 0775
 }
