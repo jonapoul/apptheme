@@ -6,6 +6,6 @@ import com.jonapoul.theme.AppTheme
 class SampleApplication : MultiDexApplication() {
     override fun onCreate() {
         super.onCreate()
-        AppTheme.init(this)
+        AppTheme.init(context = this, customSharedPrefsName = null)
     }
 }
