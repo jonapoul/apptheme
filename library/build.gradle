@@ -37,19 +37,6 @@ android {
     kotlinOptions.jvmTarget = '1.8'
 }
 
-task installLocalGitHook(type: Copy) {
-    from new File(rootProject.rootDir, 'scripts/pre-commit.sh')
-    into new File(rootProject.rootDir, '.git/hooks')
-    rename 'pre-commit.sh', 'pre-commit'
-    fileMode 0775
-}
-
-gradle.projectsEvaluated {
-    /* Force the pre-commit hook to be installed in the local repo when Gradle syncs */
-    preBuild.dependsOn installLocalGitHook
-}
-
-
 project.afterEvaluate {
     publishing {
         publications {
