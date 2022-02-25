@@ -1,6 +1,6 @@
 package com.jonapoul.theme
 
-import com.jonapoul.extensions.sharedprefs.PrefPair
+import com.jonapoul.extensions.data.PrefPair
 
 internal object Constants {
     const val PREF_KEY = "app_theme"

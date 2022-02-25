@@ -31,8 +31,8 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_light -> AppTheme.set(requireContext(), AppTheme.LIGHT)
-            R.id.action_dark -> AppTheme.set(requireContext(), AppTheme.DARK)
+            R.id.action_light -> AppTheme.set(AppTheme.LIGHT)
+            R.id.action_dark -> AppTheme.set(AppTheme.DARK)
         }
         return super.onOptionsItemSelected(item)
     }

@@ -25,7 +25,7 @@ class AppThemePreference @JvmOverloads constructor(
 ) : ListPreference(context, attrs, defStyleAttr, defStyleRes),
     SharedPreferences.OnSharedPreferenceChangeListener {
 
-    private val prefs = AppTheme.getPrefs(context)
+    private val prefs = AppTheme.sharedPrefs
 
     private var shouldShowIcon: Boolean = DEFAULT_SHOULD_SHOW_ICON
 
@@ -64,7 +64,7 @@ class AppThemePreference @JvmOverloads constructor(
      */
     override fun onAttached() {
         super.onAttached()
-        prefs.registerOnSharedPreferenceChangeListener(this)
+        prefs?.registerOnSharedPreferenceChangeListener(this)
     }
 
     /**
@@ -72,7 +72,7 @@ class AppThemePreference @JvmOverloads constructor(
      */
     override fun onDetached() {
         super.onDetached()
-        prefs.unregisterOnSharedPreferenceChangeListener(this)
+        prefs?.unregisterOnSharedPreferenceChangeListener(this)
     }
 
     /**
@@ -80,7 +80,7 @@ class AppThemePreference @JvmOverloads constructor(
      */
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         if (key == Constants.PREF_KEY) {
-            AppTheme.setFromPrefs(prefs)
+            AppTheme.setFromPrefs()
         }
     }
 

@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'maven-publish'
 
 ext {
@@ -60,8 +61,12 @@ project.afterEvaluate {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin"
     implementation "androidx.preference:preference-ktx:$versions.preference"
+    implementation "com.github.jonapoul.android-extensions:library-domain:$versions.android_extensions"
+    implementation "com.github.jonapoul.android-extensions:library-ui:$versions.android_extensions"
     implementation "com.github.jonapoul:android-extensions:$versions.android_extensions"
     implementation "com.google.android.material:material:$versions.material"
+    implementation "com.google.dagger:hilt-android:$versions.hilt"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin"
+    kapt "com.google.dagger:hilt-android-compiler:$versions.hilt"
 }
