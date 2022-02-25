@@ -2,9 +2,9 @@ $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:com.jonapoul.theme////PointingToDeclaration/library/com.jonapoul.theme/index.html
 $dokka.location:com.jonapoul.theme/AppTheme.Companion///PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-companion/index.html
-$dokka.location:com.jonapoul.theme/AppTheme.Companion/init/#android.content.Context#kotlin.String?/PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-companion/init.html
-$dokka.location:com.jonapoul.theme/AppTheme.Companion/set/#android.content.Context#com.jonapoul.theme.AppTheme/PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-companion/set.html
-$dokka.location:com.jonapoul.theme/AppTheme.Companion/setFromPrefs/#android.content.SharedPreferences/PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-companion/set-from-prefs.html
+$dokka.location:com.jonapoul.theme/AppTheme.Companion/init/#android.content.SharedPreferences/PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-companion/init.html
+$dokka.location:com.jonapoul.theme/AppTheme.Companion/set/#com.jonapoul.theme.AppTheme/PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-companion/set.html
+$dokka.location:com.jonapoul.theme/AppTheme.Companion/setFromPrefs/#/PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-companion/set-from-prefs.html
 $dokka.location:com.jonapoul.theme/AppTheme.DARK///PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-d-a-r-k/index.html
 $dokka.location:com.jonapoul.theme/AppTheme.DARK/int/#/PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-d-a-r-k/int.html
 $dokka.location:com.jonapoul.theme/AppTheme.DARK/name/#/PointingToDeclaration/library/com.jonapoul.theme/-app-theme/-d-a-r-k/name.html
@@ -23,6 +23,9 @@ $dokka.location:com.jonapoul.theme/AppTheme.SYSTEM/string/#/PointingToDeclaratio
 $dokka.location:com.jonapoul.theme/AppTheme///PointingToDeclaration/library/com.jonapoul.theme/-app-theme/index.html
 $dokka.location:com.jonapoul.theme/AppTheme/int/#/PointingToDeclaration/library/com.jonapoul.theme/-app-theme/int.html
 $dokka.location:com.jonapoul.theme/AppTheme/string/#/PointingToDeclaration/library/com.jonapoul.theme/-app-theme/string.html
+$dokka.location:com.jonapoul.theme/AppThemeInitialiser///PointingToDeclaration/library/com.jonapoul.theme/-app-theme-initialiser/index.html
+$dokka.location:com.jonapoul.theme/AppThemeInitialiser/AppThemeInitialiser/#android.content.SharedPreferences/PointingToDeclaration/library/com.jonapoul.theme/-app-theme-initialiser/-app-theme-initialiser.html
+$dokka.location:com.jonapoul.theme/AppThemeInitialiser/init/#android.app.Application/PointingToDeclaration/library/com.jonapoul.theme/-app-theme-initialiser/init.html
 $dokka.location:com.jonapoul.theme/AppThemePreference///PointingToDeclaration/library/com.jonapoul.theme/-app-theme-preference/index.html
 $dokka.location:com.jonapoul.theme/AppThemePreference/AppThemePreference/#android.content.Context#android.util.AttributeSet?#kotlin.Int#kotlin.Int/PointingToDeclaration/library/com.jonapoul.theme/-app-theme-preference/-app-theme-preference.html
 $dokka.location:com.jonapoul.theme/AppThemePreference/onAttached/#/PointingToDeclaration/library/com.jonapoul.theme/-app-theme-preference/on-attached.html
