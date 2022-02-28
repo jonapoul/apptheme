@@ -2,7 +2,7 @@ package com.jonapoul.theme
 
 import android.app.Application
 import android.content.SharedPreferences
-import com.jonapoul.extensions.domain.init.IAppInitialiser
+import com.jonapoul.common.domain.init.IAppInitialiser
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

@@ -3,11 +3,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'maven-publish'
 
-ext {
-    GROUP_ID = 'com.jonapoul'
-    ARTIFACT_ID = 'apptheme'
-}
-
 android {
     compileSdkVersion versions.targetSdk
     buildToolsVersion versions.buildTools
@@ -31,7 +26,6 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-        kotlinOptions.freeCompilerArgs += ['-module-name', "$GROUP_ID.$ARTIFACT_ID"]
     }
 
     kotlinOptions.jvmTarget = '1.8'
@@ -40,7 +34,10 @@ android {
 project.afterEvaluate {
     publishing {
         publications {
-            release(MavenPublication) {
+            maven(MavenPublication) {
+                groupId 'com.jonapoul'
+                artifactId 'apptheme'
+                version versions.libVersionName
                 from components.release
             }
         }
@@ -49,9 +46,9 @@ project.afterEvaluate {
 
 dependencies {
     implementation "androidx.preference:preference-ktx:$versions.preference"
-    implementation "com.github.jonapoul.android-extensions:library-domain:$versions.android_extensions"
-    implementation "com.github.jonapoul.android-extensions:library-ui:$versions.android_extensions"
-    implementation "com.github.jonapoul:android-extensions:$versions.android_extensions"
+    implementation "com.github.jonapoul.android-common:lib-data:$versions.android_common"
+    implementation "com.github.jonapoul.android-common:lib-domain:$versions.android_common"
+    implementation "com.github.jonapoul.android-common:lib-ui:$versions.android_common"
     implementation "com.google.android.material:material:$versions.material"
     implementation "com.google.dagger:hilt-android:$versions.hilt"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin"

@@ -3,7 +3,7 @@ package com.jonapoul.theme
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.edit
-import com.jonapoul.extensions.domain.getString
+import com.jonapoul.common.domain.getString
 
 /**
  * An enum class to hold the three possible app theme states: light, dark and system.
