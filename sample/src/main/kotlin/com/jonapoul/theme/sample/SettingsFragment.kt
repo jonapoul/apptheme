@@ -1,10 +1,10 @@
 package com.jonapoul.theme.sample
 
 import android.view.MenuItem
-import com.jonapoul.common.ui.CorePreferenceFragment
+import com.jonapoul.common.ui.CommonPreferenceFragment
 import com.jonapoul.theme.AppTheme
 
-class SettingsFragment : CorePreferenceFragment(
+class SettingsFragment : CommonPreferenceFragment(
     settings = R.xml.settings,
     menu = R.menu.menu,
 ) {

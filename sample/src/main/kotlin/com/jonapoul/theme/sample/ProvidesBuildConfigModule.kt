@@ -1,11 +1,11 @@
 package com.jonapoul.theme.sample
 
-import com.jonapoul.extensions.data.IBuildConfig
-import com.jonapoul.extensions.data.ms
+import com.jonapoul.common.core.IBuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import org.threeten.bp.Instant
 
 @InstallIn(SingletonComponent::class)
 @Module
@@ -16,6 +16,6 @@ class ProvidesBuildConfigModule {
         override val versionName = BuildConfig.VERSION_NAME
         override val versionCode = BuildConfig.VERSION_CODE
         override val gitId = ""
-        override val buildTime = BuildConfig.BUILD_TIME_MS.ms
+        override val buildTime = Instant.ofEpochMilli(BuildConfig.BUILD_TIME_MS)
     }
 }

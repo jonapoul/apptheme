@@ -7,6 +7,7 @@ import android.util.AttributeSet
 import androidx.core.content.withStyledAttributes
 import androidx.preference.ListPreference
 import androidx.preference.Preference
+import com.jonapoul.common.ui.prefs.TypedArrayUtils2
 
 /**
  * A [Preference] which allows the user to toggle the app's display theme between light, dark, or
@@ -16,7 +17,7 @@ import androidx.preference.Preference
 class AppThemePreference @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = getAttr(
+    defStyleAttr: Int = TypedArrayUtils2.getAttr(
         context,
         androidx.preference.R.attr.dialogPreferenceStyle,
         android.R.attr.dialogPreferenceStyle

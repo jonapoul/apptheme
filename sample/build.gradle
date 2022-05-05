@@ -51,5 +51,6 @@ dependencies {
     implementation "com.github.jonapoul.android-common:lib-ui:$versions.android_common"
     implementation "com.google.android.material:material:$versions.material"
     implementation "com.google.dagger:hilt-android:$versions.hilt"
+    implementation "com.jakewharton.threetenabp:threetenabp:$versions.threetenabp"
     kapt "com.google.dagger:hilt-android-compiler:$versions.hilt"
 }
