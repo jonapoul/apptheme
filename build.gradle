@@ -11,6 +11,7 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$versions.gradle"
         classpath "com.diffplug.spotless:spotless-plugin-gradle:$versions.spotless"
+        classpath "com.github.ben-manes:gradle-versions-plugin:$versions.gradle_versions"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$versions.hilt"
         classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$versions.detekt"
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:$versions.dokka"
@@ -19,8 +20,21 @@ buildscript {
     }
 }
 
+apply from: "gradle/dependency-update.gradle"
+
 allprojects {
-    apply from: "$rootProject.projectDir/versions.gradle"
+    def root = rootProject.projectDir
+    apply from: "$root/versions.gradle"
+    apply from: "$root/gradle/detekt.gradle"
+    apply from: "$root/gradle/dokka.gradle"
+    apply from: "$root/gradle/ktlint.gradle"
+    apply from: "$root/gradle/spotless.gradle"
+
+    task runChecks() {
+        dependsOn "detekt"
+        dependsOn "spotlessCheck"
+        dependsOn "ktlintCheck"
+    }
 
     repositories {
         google()
@@ -29,60 +43,7 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
-
 subprojects {
-    apply plugin: "io.gitlab.arturbosch.detekt"
-    detekt {
-        toolVersion = versions.detekt
-        config = files("$rootDir/detekt.yml")
-        buildUponDefaultConfig = true
-        reports.html.enabled = true
-    }
-    dependencies {
-        detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:$versions.detekt"
-    }
-
-    apply plugin: "org.jetbrains.dokka"
-    tasks.named("dokkaHtml") {
-        outputDirectory.set(new File("${rootProject.rootDir}/docs/api"))
-        dokkaSourceSets {
-            configureEach {
-                includeNonPublic.set(false)
-                skipEmptyPackages.set(true)
-                reportUndocumented.set(true)
-                noAndroidSdkLink.set(false)
-            }
-        }
-    }
-
-    apply plugin: "org.jlleitschuh.gradle.ktlint"
-    ktlint {
-        disabledRules = ["no-wildcard-imports"]
-    }
-
-    apply plugin: "com.diffplug.spotless"
-    spotless {
-        format 'misc', {
-            target '**/*.gradle', '**/*.md', '**/.gitignore', '**/.pro'
-            indentWithSpaces()
-            trimTrailingWhitespace()
-            endWithNewline()
-        }
-        kotlin {
-            ktlint()
-            indentWithSpaces()
-            trimTrailingWhitespace()
-            endWithNewline()
-        }
-        json {
-            target '**/*.json'
-            simple()
-        }
-    }
-
     tasks.withType(Test) {
         testLogging {
             exceptionFormat 'FULL'

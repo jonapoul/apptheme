@@ -1,0 +1,13 @@
+apply plugin: "org.jetbrains.dokka"
+
+tasks.named("dokkaHtml") {
+    outputDirectory.set(new File("${rootProject.rootDir}/docs/api"))
+    dokkaSourceSets {
+        configureEach {
+            includeNonPublic.set(false)
+            skipEmptyPackages.set(true)
+            reportUndocumented.set(true)
+            noAndroidSdkLink.set(false)
+        }
+    }
+}

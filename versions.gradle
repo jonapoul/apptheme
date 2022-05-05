@@ -9,6 +9,7 @@ ext.versions = [
         gradle                  : '7.1.1',
         detekt                  : '1.19.0',
         dokka                   : '1.4.32',
+        gradle_versions         : '0.42.0',
         hilt                    : '2.41',
         kotlin                  : '1.6.10',
         buildTools              : '30.0.3',
